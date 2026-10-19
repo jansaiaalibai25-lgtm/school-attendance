@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Кабинет учителя</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary px-3">
+        <span class="navbar-brand">Кабинет учителя ({{ session['name'] }})</span>
+        <a href="/logout" class="btn btn-outline-light btn-sm">Выйти</a>
+    </nav>
+    <div class="container mt-4">
+        <h4>Выберите урок для отметки:</h4>
+        <table class="table table-bordered mt-3">
+            <tr><th>Дата</th><th>Предмет</th><th>Класс</th><th>Действие</th></tr>
+            {% for lesson in lessons %}
+            <tr>
+                <td>{{ lesson[2] }}</td>
+                <td>{{ lesson[1] }}</td>
+                <td>{{ lesson[3] }}</td>
+                <td><a href="/lesson/{{ lesson[0] }}" class="btn btn-sm btn-success">Отметить</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

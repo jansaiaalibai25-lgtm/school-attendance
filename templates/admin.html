@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отчет для завуча</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark px-3">
+        <span class="navbar-brand">Отчет по школе (Завуч)</span>
+        <a href="/logout" class="btn btn-outline-light btn-sm">Выйти</a>
+    </nav>
+    <div class="container mt-4">
+        <table class="table table-bordered mt-3">
+            <tr><th>Дата</th><th>Предмет</th><th>Ученик</th><th>Статус</th></tr>
+            {% for row in records %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
